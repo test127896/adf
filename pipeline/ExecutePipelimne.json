@@ -1,0 +1,33 @@
+{
+	"name": "ExecutePipelimne",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ADF_Pro_1",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"schema": "source",
+						"tablename": "orders"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Azure Data Factory ADVANCED Course"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-15T11:15:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

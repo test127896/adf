@@ -1,0 +1,9 @@
+{
+	"name": "adfdatabricks18082025",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "91f0946e-c29a-454c-a724-347772ede72d",
+		"tenantId": "7bebc27c-e3b4-4f1b-b1c7-b97d679829af"
+	}
+}

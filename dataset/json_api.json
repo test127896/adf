@@ -1,0 +1,21 @@
+{
+	"name": "json_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Files_target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "pokima.json",
+				"folderPath": "API",
+				"fileSystem": "destination"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

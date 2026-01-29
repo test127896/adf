@@ -1,0 +1,24 @@
+{
+	"name": "Scheled_Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ExecutePipelimne",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2025-11-15T11:15:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"name": "file_move_withdataflow",
+	"properties": {
+		"activities": [
+			{
+				"name": "file_move_schema_validation",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "filemove_schemavalidate",
+						"type": "DataFlowReference",
+						"parameters": {
+							"destination": "'destination'",
+							"foldername": "'sink'"
+						},
+						"datasetParameters": {
+							"source1": {
+								"container": "destination",
+								"directory": "sink",
+								"filename": "customers.csv"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "Practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-01-26T01:20:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

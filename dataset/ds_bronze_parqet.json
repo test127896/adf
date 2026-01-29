@@ -1,0 +1,71 @@
+{
+	"name": "ds_bronze_parqet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "files_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_container": {
+				"type": "string"
+			},
+			"p_foldername": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "incremental_load"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().p_foldername",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().p_container",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "INT32"
+			},
+			{
+				"name": "order_date",
+				"type": "INT96"
+			},
+			{
+				"name": "order_status",
+				"type": "UTF8"
+			},
+			{
+				"name": "orderItem_id",
+				"type": "INT32"
+			},
+			{
+				"name": "product_id",
+				"type": "INT32"
+			},
+			{
+				"name": "quantity",
+				"type": "INT32"
+			},
+			{
+				"name": "total",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "price",
+				"type": "DOUBLE"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

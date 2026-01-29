@@ -1,0 +1,11 @@
+{
+	"name": "kv_adf",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-adf-thirumal.vault.azure.net/"
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"name": "target_adf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Files_target",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "copyactivitydemo"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "target_adf",
+				"fileSystem": "silver"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

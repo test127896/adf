@@ -1,0 +1,31 @@
+{
+	"name": "ds_jsoncdc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "files_source",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Azure Data Factory ADVANCED Course"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "cdc.json",
+				"folderPath": "monitor",
+				"fileSystem": "source"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"cdc_timestamp": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

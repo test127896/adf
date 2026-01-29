@@ -1,0 +1,80 @@
+{
+	"name": "SwtchactivityDemo",
+	"properties": {
+		"activities": [
+			{
+				"name": "SwitchNotebook",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@pipeline().parameters.notebook",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "pivot",
+							"activities": [
+								{
+									"name": "pivoteNotebook",
+									"type": "DatabricksNotebook",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"notebookPath": "/Repos/test127896@gmail.com/databrickspractice-dev/Pivot,Unpivot and tempview"
+									},
+									"linkedServiceName": {
+										"referenceName": "PivoteUnpite",
+										"type": "LinkedServiceReference"
+									}
+								}
+							]
+						},
+						{
+							"value": "workflow",
+							"activities": [
+								{
+									"name": "Workflow",
+									"type": "DatabricksNotebook",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"notebookPath": "/Repos/test127896@gmail.com/databrickspractice-dev/WorkFlowDenormalized"
+									},
+									"linkedServiceName": {
+										"referenceName": "PivoteUnpite",
+										"type": "LinkedServiceReference"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"notebook": {
+				"type": "string",
+				"defaultValue": "pivot"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-01T08:23:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

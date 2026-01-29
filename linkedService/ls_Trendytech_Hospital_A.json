@@ -1,0 +1,17 @@
+{
+	"name": "ls_Trendytech_Hospital_A",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "carsalesserverindia.database.windows.net",
+			"database": "trendytech-hospital-b",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "adminthirumal",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk2N0FFNDEyLUM1MUItNEQzRC04NjQ5LUIyRUY0MzBGMjM5M184MjIzZDFlNy0wNzViLTRmOGEtOGY3Ny1hZjA4MGFlZTg5ZDgiDQp9"
+		}
+	}
+}

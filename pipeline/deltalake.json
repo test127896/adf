@@ -1,0 +1,47 @@
+{
+	"name": "deltalake",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "deltaflow",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"source": {
+								"p_container_name": "source",
+								"p_folder_name": "deltasource",
+								"p_file_name": "locations.csv"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "None",
+					"cacheSinks": {
+						"firstRowOnly": true
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Azure Data Factory ADVANCED Course"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-24T15:00:24Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

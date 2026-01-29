@@ -1,0 +1,30 @@
+{
+	"name": "databrickactivitydemo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/test127896@gmail.com/databrickspractice-dev/Pivot,Unpivot and tempview"
+				},
+				"linkedServiceName": {
+					"referenceName": "PivoteUnpite",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-10-31T10:36:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

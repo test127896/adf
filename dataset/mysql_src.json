@@ -1,0 +1,19 @@
+{
+	"name": "mysql_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mysql_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "copyactivitydemo"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`country`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

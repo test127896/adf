@@ -1,0 +1,28 @@
+{
+	"name": "spool_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "files_source",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Spooldir"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "orders.csv",
+				"folderPath": "spoolingsource",
+				"fileSystem": "adftarget"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
