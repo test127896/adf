@@ -1,0 +1,368 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdatabricks18082025"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
+		},
+		"Files_target_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Files_target'"
+		},
+		"PivoteUnpite_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'PivoteUnpite'"
+		},
+		"blob_storage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blob_storage'"
+		},
+		"files_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'files_source'"
+		},
+		"ls_Trendytech_Hospital_A_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_Trendytech_Hospital_A'"
+		},
+		"ls_datalake_healthcare_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_datalake_healthcare'"
+		},
+		"ls_delta_lake_databricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_delta_lake_databricks'"
+		},
+		"ls_healthcare_project_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_healthcare_project'"
+		},
+		"ls_sqldb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sqldb'"
+		},
+		"mysql_linkedservice_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'mysql_linkedservice'"
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "kv-adf-blob-con"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "carsalesserverindia.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "trendytech-hospital-a"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminthirumal"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "carsalesserverindia.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "@{linkedService().databasename}"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminthirumal"
+		},
+		"Files_target_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"PivoteUnpite_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1018-162349-kqaivk1m"
+		},
+		"files_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"kv_adf_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-adf-thirumal.vault.azure.net/"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "carsalesserverindia.database.windows.net"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "trendytech-hospital-b"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminthirumal"
+		},
+		"ls_datalake_healthcare_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"ls_github_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"ls_healthcare_project_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "carsalesserverindia.database.windows.net"
+		},
+		"ls_healthcare_project_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "@{linkedService().databasename}"
+		},
+		"ls_healthcare_project_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminthirumal"
+		},
+		"ls_restapi_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"ls_sqldb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "carsalesserverindia.database.windows.net"
+		},
+		"ls_sqldb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "CarsSales"
+		},
+		"ls_sqldb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminthirumal"
+		},
+		"mysql_linkedservice_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-Q7CR59L"
+		},
+		"mysql_linkedservice_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "world"
+		},
+		"mysql_linkedservice_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdatabricks18082025_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase2_password": {
+						"value": "[parameters('AzureSqlDatabase2_password')]"
+					},
+					"Files_target_accountKey": {
+						"value": "[parameters('Files_target_accountKey')]"
+					},
+					"PivoteUnpite_accessToken": {
+						"value": "[parameters('PivoteUnpite_accessToken')]"
+					},
+					"blob_storage_connectionString": {
+						"value": "[parameters('blob_storage_connectionString')]"
+					},
+					"files_source_accountKey": {
+						"value": "[parameters('files_source_accountKey')]"
+					},
+					"ls_Trendytech_Hospital_A_password": {
+						"value": "[parameters('ls_Trendytech_Hospital_A_password')]"
+					},
+					"ls_datalake_healthcare_accountKey": {
+						"value": "[parameters('ls_datalake_healthcare_accountKey')]"
+					},
+					"ls_delta_lake_databricks_accessToken": {
+						"value": "[parameters('ls_delta_lake_databricks_accessToken')]"
+					},
+					"ls_healthcare_project_password": {
+						"value": "[parameters('ls_healthcare_project_password')]"
+					},
+					"ls_sqldb_password": {
+						"value": "[parameters('ls_sqldb_password')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"Files_target_properties_typeProperties_url": {
+						"value": "[parameters('Files_target_properties_typeProperties_url')]"
+					},
+					"PivoteUnpite_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('PivoteUnpite_properties_typeProperties_existingClusterId')]"
+					},
+					"files_source_properties_typeProperties_url": {
+						"value": "[parameters('files_source_properties_typeProperties_url')]"
+					},
+					"kv_adf_properties_typeProperties_baseUrl": {
+						"value": "[parameters('kv_adf_properties_typeProperties_baseUrl')]"
+					},
+					"ls_Trendytech_Hospital_A_properties_typeProperties_server": {
+						"value": "[parameters('ls_Trendytech_Hospital_A_properties_typeProperties_server')]"
+					},
+					"ls_Trendytech_Hospital_A_properties_typeProperties_database": {
+						"value": "[parameters('ls_Trendytech_Hospital_A_properties_typeProperties_database')]"
+					},
+					"ls_Trendytech_Hospital_A_properties_typeProperties_userName": {
+						"value": "[parameters('ls_Trendytech_Hospital_A_properties_typeProperties_userName')]"
+					},
+					"ls_datalake_healthcare_properties_typeProperties_url": {
+						"value": "[parameters('ls_datalake_healthcare_properties_typeProperties_url')]"
+					},
+					"ls_github_properties_typeProperties_url": {
+						"value": "[parameters('ls_github_properties_typeProperties_url')]"
+					},
+					"ls_healthcare_project_properties_typeProperties_server": {
+						"value": "[parameters('ls_healthcare_project_properties_typeProperties_server')]"
+					},
+					"ls_healthcare_project_properties_typeProperties_database": {
+						"value": "[parameters('ls_healthcare_project_properties_typeProperties_database')]"
+					},
+					"ls_healthcare_project_properties_typeProperties_userName": {
+						"value": "[parameters('ls_healthcare_project_properties_typeProperties_userName')]"
+					},
+					"ls_restapi_properties_typeProperties_url": {
+						"value": "[parameters('ls_restapi_properties_typeProperties_url')]"
+					},
+					"ls_sqldb_properties_typeProperties_server": {
+						"value": "[parameters('ls_sqldb_properties_typeProperties_server')]"
+					},
+					"ls_sqldb_properties_typeProperties_database": {
+						"value": "[parameters('ls_sqldb_properties_typeProperties_database')]"
+					},
+					"ls_sqldb_properties_typeProperties_userName": {
+						"value": "[parameters('ls_sqldb_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfdatabricks18082025_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdatabricks18082025_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adfdatabricks18082025_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"mysql_linkedservice_password": {
+						"value": "[parameters('mysql_linkedservice_password')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"mysql_linkedservice_properties_typeProperties_server": {
+						"value": "[parameters('mysql_linkedservice_properties_typeProperties_server')]"
+					},
+					"mysql_linkedservice_properties_typeProperties_database": {
+						"value": "[parameters('mysql_linkedservice_properties_typeProperties_database')]"
+					},
+					"mysql_linkedservice_properties_typeProperties_username": {
+						"value": "[parameters('mysql_linkedservice_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdatabricks18082025_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adfdatabricks18082025_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdatabricks18082025_ArmTemplate_2')]"
+			]
+		}
+	]
+}

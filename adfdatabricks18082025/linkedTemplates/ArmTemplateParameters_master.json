@@ -1,0 +1,129 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdatabricks18082025"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"Files_target_accountKey": {
+			"value": ""
+		},
+		"PivoteUnpite_accessToken": {
+			"value": ""
+		},
+		"blob_storage_connectionString": {
+			"value": ""
+		},
+		"files_source_accountKey": {
+			"value": ""
+		},
+		"ls_Trendytech_Hospital_A_password": {
+			"value": ""
+		},
+		"ls_datalake_healthcare_accountKey": {
+			"value": ""
+		},
+		"ls_delta_lake_databricks_accessToken": {
+			"value": ""
+		},
+		"ls_healthcare_project_password": {
+			"value": ""
+		},
+		"ls_sqldb_password": {
+			"value": ""
+		},
+		"mysql_linkedservice_password": {
+			"value": ""
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "kv-adf-blob-con"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "carsalesserverindia.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "trendytech-hospital-a"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "adminthirumal"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "carsalesserverindia.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "@{linkedService().databasename}"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "adminthirumal"
+		},
+		"Files_target_properties_typeProperties_url": {
+			"value": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"PivoteUnpite_properties_typeProperties_existingClusterId": {
+			"value": "1018-162349-kqaivk1m"
+		},
+		"files_source_properties_typeProperties_url": {
+			"value": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"kv_adf_properties_typeProperties_baseUrl": {
+			"value": "https://kv-adf-thirumal.vault.azure.net/"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_server": {
+			"value": "carsalesserverindia.database.windows.net"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_database": {
+			"value": "trendytech-hospital-b"
+		},
+		"ls_Trendytech_Hospital_A_properties_typeProperties_userName": {
+			"value": "adminthirumal"
+		},
+		"ls_datalake_healthcare_properties_typeProperties_url": {
+			"value": "https://databricks180820251.dfs.core.windows.net/"
+		},
+		"ls_github_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"ls_healthcare_project_properties_typeProperties_server": {
+			"value": "carsalesserverindia.database.windows.net"
+		},
+		"ls_healthcare_project_properties_typeProperties_database": {
+			"value": "@{linkedService().databasename}"
+		},
+		"ls_healthcare_project_properties_typeProperties_userName": {
+			"value": "adminthirumal"
+		},
+		"ls_restapi_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"ls_sqldb_properties_typeProperties_server": {
+			"value": "carsalesserverindia.database.windows.net"
+		},
+		"ls_sqldb_properties_typeProperties_database": {
+			"value": "CarsSales"
+		},
+		"ls_sqldb_properties_typeProperties_userName": {
+			"value": "adminthirumal"
+		},
+		"mysql_linkedservice_properties_typeProperties_server": {
+			"value": "DESKTOP-Q7CR59L"
+		},
+		"mysql_linkedservice_properties_typeProperties_database": {
+			"value": "world"
+		},
+		"mysql_linkedservice_properties_typeProperties_username": {
+			"value": "test"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
